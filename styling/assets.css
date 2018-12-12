@@ -1,0 +1,28 @@
+
+/*fonts*/
+
+
+/*colours*/
+
+/*rows styling*/
+body{
+    padding:0px;
+    margin:0px;
+}
+.full-row{
+    max-width: 1080px;
+    display: block;
+    margin:0 auto;
+    padding:0 35px;
+}
+
+/*Hover effects*/
+a{
+    text-decoration: none;
+}
+.link{
+    transition: all ease 0.4s;
+}
+.link:hover{
+    color: #f8c5ff;
+}

@@ -1,0 +1,49 @@
+.header .blocks-container{
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+}
+
+.header{
+    height: 60px;
+    background-color: #1d1d1d;
+}
+
+.logo, .media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.logo{
+    float: left;
+}
+
+.logo h1{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.media{
+    float: right;
+}
+
+.media ul{
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+.media ul li{
+    float: left;
+    display: inline-block;
+    margin:0 10px;
+    font-size: 20px;
+}
+.media ul li a{
+    color: #ffffff;
+}
