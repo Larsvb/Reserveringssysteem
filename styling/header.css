@@ -1,19 +1,19 @@
 .header .blocks-container{
     width: 100%;
-    display: inline-block;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header{
-    height: 60px;
     background-color: #1d1d1d;
 }
 
 .logo, .media{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    display: inline-block;
+    width: auto;
     height: 100%;
 }
 
