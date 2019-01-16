@@ -1,10 +1,10 @@
 function getName()
 {
-    let idTreatment = document.getElementById("behandeling").value;
+    let idTreatment = document.getElementById("treatments").value;
 
     if (idTreatment == "")
     {
-        document.getElementById("times_container").innerHTML = "kies een tijd hierboven :)";
+        document.getElementById("workers").innerHTML = "kies een tijd hierboven :)";
         return;
     }
     else
@@ -24,11 +24,15 @@ function getName()
         {
             if (this.readyState == 4 && this.status == 200)
             {
-                document.getElementById("medewerkster").innerHTML = this.responseText;
+                document.getElementById("workers").innerHTML = this.responseText;
             }
         };
 
-        xmlhttp.open("GET","treatment-worker.php?q="+idTreatment,true);
+        xmlhttp.open("GET","includes/treatment-worker.php?q="+idTreatment,true);
         xmlhttp.send();
+
     }
 }
+
+let treatments = document.getElementById("treatments");
+treatments.addEventListener("change", getName);

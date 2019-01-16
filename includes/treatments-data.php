@@ -12,5 +12,3 @@ while ($row = mysqli_fetch_assoc($result))
     $treatments[] = $row;
 }
 
-//Close connection
-mysqli_close($db);

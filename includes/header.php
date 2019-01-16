@@ -3,7 +3,7 @@
         <div class="full-row">
             <div class="blocks-container">
                 <div class="logo link">
-                    <h1>Beautysalon AnneFleur</h1>
+                    <a href="http://localhost/beautysalon/reserveringssysteem/index.php" ><h1>Beautysalon AnneFleur</h1></a>
                 </div>
                 <div class="media">
                    <ul>

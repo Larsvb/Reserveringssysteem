@@ -13,7 +13,112 @@ body{
     max-width: 1080px;
     display: block;
     margin:0 auto;
-    padding:0 35px;
+}
+
+body{
+    padding: 0;
+    margin:0;
+    background-color: #F0F0F0;
+}
+
+.row{
+    overflow: hidden;
+}
+
+.center{
+    text-align: center;
+}
+.background{
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin:0 auto;
+    -webkit-box-shadow: 1px 4px 24px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 24px -6px rgba(0,0,0,0.75);
+    box-shadow: 1px 4px 24px -6px rgba(0,0,0,0.75);
+
+}
+
+.blocks-container.padding{
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+.blocks-container{
+    display: inline-block;
+    width: 100%;
+
+}
+.block.title{
+    position: relative;
+    margin:0 auto;
+    display: inline-block;
+}
+.block.title h2{
+    font-size: 28px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(150, 150, 150, 0.73);
+    letter-spacing: 7px;
+    margin:0px;
+    position: relative;
+    z-index: 4;
+}
+
+.block.title h3{
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(150, 150, 150, 0.73);
+    letter-spacing: 7px;
+    margin:0px;
+    position: relative;
+    z-index: 4;
+    border-bottom: 3px solid #000000;
+}
+
+a{
+    font-weight: 700;
+    color:#000000;
+}
+a:hover{
+    color: #9A9A9A;
+    border-bottom:3px solid #FEEDFF;
+}
+
+.block.title.pink:before{
+     content: "";
+     width: 75%;
+     height: 100%;
+     position: absolute;
+     z-index: 1;
+     left:50%;
+     top:50%;
+     transform: translate(-50%, -50%);
+     background: #FEEDFF;
+ }
+
+.block.title.left-after:before{
+    content: "";
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    left:15%;
+    top:85%;
+    transform: translate(-50%, -50%);
+    background: #FEEDFF;
+}
+
+.block.text p{
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    font-weight: normal;
+    margin-bottom: 0px;
 }
 
 /*Hover effects*/
