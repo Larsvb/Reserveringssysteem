@@ -1,6 +1,18 @@
 <?php
 
+session_start();
 require_once "includes/appointments-data.php";
+
+//mag ik deze pagina bezoeken?
+if (!isset($_SESSION['loggedIn']))
+{
+    header("location: login.php");
+    exit;
+}
+
+$email = $_SESSION['loggedIn'];
+
+
 ?>
 
 <!doctype html>
@@ -15,7 +27,22 @@ require_once "includes/appointments-data.php";
 </head>
 
 <body>
-    <?php include('./includes/header.php'); ?>
+
+<header>
+    <div class="row header">
+        <div class="full-row">
+            <div class="blocks-container">
+                <div class="logo link">
+                    <a href="http://localhost/beautysalon/reserveringssysteem/index.php" ><h1>Beautysalon AnneFleur</h1></a>
+                </div>
+                <form class="logout">
+                    <button type="submit" name="logout" id="logout-button"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
 <div class="background">
     <div class="row">
         <div class="full-row">
@@ -30,13 +57,16 @@ require_once "includes/appointments-data.php";
                         <div class="appointment">
                             <?= $appointment['treatment_name']; ?>
                             <?= $appointment['account_name']; ?>
-                            <?= $appointment['id']; ?>
                             <?= $appointment['firstname']; ?>
                             <?= $appointment['lastname']; ?>
                             <?= $appointment['email']; ?>
                             <?= $appointment['phone']; ?>
                             <?= $appointment['birthday']; ?>
+
                         </div>
+                        <div>
+                            <?= $appointment['suggestion_date']; ?>
+                        </div><br><br><br>
 
                     <?php } ?>
                 </div>

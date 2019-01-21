@@ -17,7 +17,24 @@ require_once "includes/query.php";
 </head>
 <body>
 
-    <?php include('./includes/header.php'); ?>
+    <header>
+        <div class="row header">
+            <div class="full-row">
+                <div class="blocks-container">
+                    <div class="logo link">
+                        <a href="http://localhost/beautysalon/reserveringssysteem/index.php" ><h1>Beautysalon AnneFleur</h1></a>
+                    </div>
+                    <div class="media">
+                        <ul>
+                            <li class="social-media"><a href="https://instagram.com" class="link" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li class="social-media"><a href="https://facebook.com" class="link" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="background">
         <div class="row">
             <div class="full-row">
@@ -76,36 +93,36 @@ require_once "includes/query.php";
                         <div class="data-field">
                             <div>
                                 <label for="date1">Datum</label>
-                                <input id="date1" type="date" name="date1" value="<?= (isset($date) ? $date : ''); ?>"/>
+                                <input id="date1" class="datepicker" type="text" name="date1" value="">
                             </div>
                             <div>
                                 <label>Tijd</label>
-                                <p>Van:<input id="starttime" type="time" name="time-start1" value="<?= (isset($startTime) ? $startTime : ''); ?>"/>
-                                   tot: <input id="endtime" type="time" name="time-end1" value="<?= (isset($endTime) ? $endTime : ''); ?>"/></p>
+                                <p>Van:<input id="starttime" type="time" name="time-start1" value=""/>
+                                   tot: <input id="endtime" type="time" name="time-end1" value=""/></p>
                             </div>
                         </div>
 
                         <div class="data-field">
                             <div>
                                 <label for="date2">Datum</label>
-                                <input id="date2" type="date" name="date2" value="<?= (isset($date2) ? $date2 : ''); ?>"/>
+                                <input id="date2" class="datepicker" type="tex" name="date2" value=""/>
                             </div>
                             <div>
                                 <label>Tijd</label>
-                                <p>Van:<input id="starttime2" type="time" name="time-start2" value="<?= (isset($startTime2) ? $startTime2 : ''); ?>"/>
-                                    tot: <input id="endtime2" type="time" name="time-end2" value="<?= (isset($endTime2) ? $endTime2 : ''); ?>"/></p>
+                                <p>Van:<input id="starttime2" type="time" name="time-start2" value=""/>
+                                    tot: <input id="endtime2" type="time" name="time-end2" value=""/></p>
                             </div>
                         </div>
 
                         <div class="data-field">
                             <div>
                                 <label for="date3">Datum</label>
-                                <input id="date3" type="date" name="date3" value="<?= (isset($date3) ? $date3 : ''); ?>"/>
+                                <input id="date3" class="datepicker" type="text" name="date3" value=""/>
                             </div>
                             <div>
                                 <label>Tijd</label>
-                                <p>Van:<input id="starttime3" type="time" name="time-start3" value="<?= (isset($startTime3) ? $startTime3 : ''); ?>"/>
-                                    tot: <input id="endtime3" type="time" name="time-end3" value="<?= (isset($endTime3) ? $endTime3 : ''); ?>"/></p>
+                                <p>Van:<input id="starttime3" type="time" name="time-start3" value=""/>
+                                    tot: <input id="endtime3" type="time" name="time-end3" value=""/></p>
                             </div>
                         </div>
 
@@ -116,28 +133,28 @@ require_once "includes/query.php";
                         <div class="data-field">
                             <div class="firstname">
                                 <label>Voornaam</label>
-                                <input id="firstname" type="text" name="firstname" value="<?= (isset($firstname) ? $firstname : ''); ?>">
+                                <input id="firstname" type="text" name="firstname" value="">
                             </div>
                             <div class="lastname">
                                 <label>Achternaam</label>
-                                <input id="lastname" type="text" name="lastname" value="<?= (isset($lastname) ? $lastname : ''); ?>">
+                                <input id="lastname" type="text" name="lastname" value="">
                             </div>
                         </div>
 
                         <div class="data-field">
                             <div class="emailinput"></div>
                                 <label>E-mail</label>
-                                <input id="email" type="email" name="email" value="<?= (isset($email) ? $email : ''); ?>">
+                                <input id="email" type="email" name="email" value="">
                             </div>
                             <div class="phoneinput">
                                 <label>Telefoonnummer</label>
-                                <input id="phone" type="number" name="phone" value="<?= (isset($phone) ? $phone : ''); ?>">
+                                <input id="phone" type="number" name="phone" value="">
                             </div>
                         </div>
 
                         <div class="data-field">
                             <label>Geboortedatum</label>
-                            <input id="birthdate" type="date" name="birthdate" value="<?= (isset($birth) ? $birth : ''); ?>">
+                            <input id="birthdate" type="date" name="birthdate" value="">
                         </div>
 
                         <div class="data-submit">
@@ -148,7 +165,17 @@ require_once "includes/query.php";
             </div>
         </div>
     </div>
-
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker({
+                beforeShowDay: $.datepicker.noWeekends,
+                minDate: +3, maxDate: "+1M ",
+                firstDay: 1,
+                dateFormat: 'yy-mm-dd',
+                changeYear: true,
+            });
+        } );
+    </script>
     <script src="includes/main.js"></script>
 </body>
 </html>

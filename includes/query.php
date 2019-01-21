@@ -49,9 +49,9 @@ if (isset($_POST['submit']))
     {
         $query = "
                   INSERT INTO suggestions (date, time_start, time_end, appointment_id)
-                  VALUES ( '$date', '$startTime', '$endTime', $appointmentId ),
-                         ( '$date2', '$startTime2', '$endTime2', $appointmentId ),
-                         ( '$date3', '$startTime3', '$endTime3', $appointmentId )
+                  VALUES ( '".DateTime::createFromFormat('d-m-Y', $date)->format('Y-m-d')."', '$startTime', '$endTime', $appointmentId ),
+                         ( '".DateTime::createFromFormat('d-m-Y', $date2)->format('Y-m-d')."', '$startTime2', '$endTime2', $appointmentId ),
+                         ( '".DateTime::createFromFormat('d-m-Y', $date3)->format('Y-m-d')."', '$startTime3', '$endTime3', $appointmentId )
                   ";
 
         $result = mysqli_query($db, $query);
