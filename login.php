@@ -28,7 +28,7 @@ if (isset($_POST['login']))
         //validate password
         if(password_verify($password, $user['login_pass']))
         {
-
+            console.log("nummer 2");
             //set email for later use in Session
             $_SESSION['loggedIn'] = [
                 'email' => $user['email'],
@@ -68,7 +68,7 @@ if($_POST){
 if (isset($_SESSION['login']))
 {
 //    if you are logged in you wil get redirected to the admin-index.php
-    // header("location: admin-index.php");
+    header("location: admin-index.php");
     exit;
 }
 ?>
