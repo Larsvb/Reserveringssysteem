@@ -47,8 +47,7 @@ if (isset($_POST['login']))
 }
 
 // ReCAPTCHAv3
-define('SITE_KEY', '6LeTM60UAAAAAMw9TPK-znvv1ol2IXpXWne6lDFG');
-define('SECRET_KEY', '6LeTM60UAAAAAC7gXpNBf3zbyNXsg9Ry2NnVMl1T');
+
 
 if($_POST){
     function getCaptcha($SecretKey){

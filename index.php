@@ -16,14 +16,14 @@ if (isset($_POST['submit']))
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';                     // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = "larsvboven@gmail.com";                 // SMTP username
-    $mail->Password = '137/LvB.,';                           // SMTP password
+    $mail->Username = "";                 // SMTP username
+    $mail->Password = '';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
 
-    $mail->setFrom("larsvboven@gmail.com");
+    $mail->setFrom("");
     $mail->addAddress($_POST['email']);     // Add a recipient
-    $mail->addReplyTo( "larsvboven@gmail.com");
+    $mail->addReplyTo( "");
 
     $mail->isHTML(true);                                  // Set email format to HTML
 
