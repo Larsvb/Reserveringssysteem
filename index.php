@@ -3,43 +3,6 @@
 require_once "includes/treatments-data.php";
 require_once "includes/query.php";
 
-if (isset($_POST['submit']))
-{
-    // phpmailer
-    require "libs/PHPMailer/PHPMailerAutoload.php";
-            
-
-    $mail = new PHPMailer;
-
-    $mail->SMTPDebug = 4;                               // Enable verbose debug output
-
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';                     // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = "";                 // SMTP username
-    $mail->Password = '';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;                                    // TCP port to connect to
-
-    $mail->setFrom("");
-    $mail->addAddress($_POST['email']);     // Add a recipient
-    $mail->addReplyTo( "");
-
-    $mail->isHTML(true);                                  // Set email format to HTML
-
-    $mail->Subject = 'Bevestigingsmail afspraak Beautysalon AnneFleur';
-    $mail->Body    = "hoi " . $_POST['name'] . ",\n" . "<br><br>" . "Hierbij bevestigen wij dat uw aangevraagde afspraak is binnen
-    gekomen en in behandeling wordt genomen.";
-
-    if(!$mail->send()) {
-        echo 'Message could not be sent.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
-    } else {
-        echo 'Message has been sent';
-    }
-
-}
-
 
 ?>
 

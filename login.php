@@ -46,23 +46,6 @@ if (isset($_POST['login']))
     }
 }
 
-// ReCAPTCHAv3
-
-
-if($_POST){
-    function getCaptcha($SecretKey){
-        $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response={$SecretKey}');
-        $return = json_decode($response);
-        return $return;
-    }
-    $Return = getCaptcha($_POST['g-recaptcha-response']);
-    if($Return->success == true && $Return->score > 0.5){
-        echo "succes!";
-    }else {
-        echo "You are a robot!!";
-    }
-}
-
 //check if you are loged-in
 if (isset($_SESSION['login']))
 {
@@ -83,7 +66,6 @@ if (isset($_SESSION['login']))
     <!--    get all the links that must be used from the file links.php in the map includes-->
     <?php include('./includes/links.php'); ?>
     <title>Reserveringssysteem</title>
-    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script>
 </head>
 <body>
 
@@ -132,20 +114,11 @@ if (isset($_SESSION['login']))
                                 <label for="password">Wachtwoord:</label>
                                 <input id="password" type="password" name="password"/>
                             </div>
-                            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                             <div class="button">
                                 <button class="left-after" id="login-submit" type="submit" name="login" value="login"><h3>Login.</h3></button>
                             </div>
                         </form>
-                        <script>
-                            grecaptcha.ready(function() {
-                                grecaptcha.execute('<?php echo SITE_KEY; ?>', {action: 'homepage'})
-                                .then(function(token) {
-                                    // console.log(token);
-                                    document.getElementById('g-recaptcha-response').value=token;
-                                });
-                            });
-                        </script>
+                       
                     </div>
                 </div>
             </div>
