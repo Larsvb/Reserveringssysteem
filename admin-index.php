@@ -1,16 +1,11 @@
 <?php
 
-session_start();
 require_once "includes/appointments-data.php";
 
-//mag ik deze pagina bezoeken?
-if (!isset($_SESSION['loggedIn']))
-{
+if(isset($_POST['logout'])) {
+    unset($_SESSION['loggedIn']);
     header("location: login.php");
-    exit;
 }
-
-$email = $_SESSION['loggedIn'];
 
 
 ?>
@@ -35,8 +30,8 @@ $email = $_SESSION['loggedIn'];
                 <div class="logo link">
                     <a href="http://localhost/beautysalon/reserveringssysteem/index.php" ><h1>Beautysalon AnneFleur</h1></a>
                 </div>
-                <form class="logout">
-                    <button type="submit" name="logout" id="logout-button"></button>
+                <form action="" method="post" class="logout">
+                    <button type="submit" name="logout" id="logout-button">Log uit.</button>
                 </form>
             </div>
         </div>
@@ -53,21 +48,34 @@ $email = $_SESSION['loggedIn'];
 
                 <div class="appointments">
                     <?php foreach ($appointments as $appointment) { ?>
-
                         <div class="appointment">
-                            <?= $appointment['treatment_name']; ?>
-                            <?= $appointment['account_name']; ?>
-                            <?= $appointment['firstname']; ?>
-                            <?= $appointment['lastname']; ?>
-                            <?= $appointment['email']; ?>
-                            <?= $appointment['phone']; ?>
-                            <?= $appointment['birthday']; ?>
+                            <div class="data">
+                                <div class="appoint-data"><?= $appointment['treatment_name']; ?></div>
+                                <div class="appoint-data"><?= $appointment['account_name']; ?></div>
+                                <div class="appoint-data"><?= $appointment['firstname']; ?>
+                                                          <?= $appointment['lastname']; ?></div>
+                                <div class="appoint-data"><?= $appointment['email']; ?></div>
+                                <div class="appoint-data"><?= $appointment['phone']; ?></div>
+                                <div class="appoint-data"><?= $appointment['birthday']; ?></div>
+                            </div>
 
+                            <div class="suggestion-list">
+                                <?php foreach ($suggestions as $suggestion) { ?>
+                                    <?php if($suggestion['id'] == $appointment['id']) { ?>
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="suggestion-id" value="<?= $suggestion['sugg_id']; ?>">
+                                            <input type="hidden" name="appointment-id" value="<?= $suggestion['appointment_id']; ?>">
+                                            <?= $suggestion['sugg_id'] ?>
+                                            <?= $suggestion['suggestion_date']; ?>
+                                            <?= $suggestion['start_time']; ?>
+                                            <?= $suggestion['end_time']; ?>
+                                                <button name="select" type="submit">Kies</button>
+                                                <?= $appointment['id']; ?>
+                                        </form>
+                                    <?php } ?>
+                                <?php } ?>
+                            </div>
                         </div>
-                        <div>
-                            <?= $appointment['suggestion_date']; ?>
-                        </div><br><br><br>
-
                     <?php } ?>
                 </div>
             </div>

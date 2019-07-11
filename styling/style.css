@@ -7,7 +7,7 @@
     position: relative;
     display: block;
 }
-.blocks-container.slider{
+.blocks-container.slider.succeeded{
     background-image: url("../images/slider.jpg");
     background-repeat: no-repeat;
     background-size:cover;
@@ -83,4 +83,104 @@
 
 .row.succes-page .blocks-container .block.text{
     margin-top:30px;
+}
+
+.appointments{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.appointments .appointment{
+    background-color: #F0F0F0;
+    width: 100%;
+    display: inline-block;
+    padding:10px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.appointments .appointment .data{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form .treatmentinfo, form .personinfo{
+    display: inline-block;
+    width: 100%;
+    border-left:3px solid #212121;
+    padding-left:30px;
+    box-sizing:border-box;
+    margin-left:100px;
+    margin-bottom: 30px;
+}
+
+.login-container{
+    display: inline-block;
+    width: calc(100% - 60px);
+    padding-left: 30px;
+    box-sizing: border-box;
+    padding: 30px;
+    margin-left: 50px;
+}
+form.login {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left:30px;
+    box-sizing:border-box;
+    padding:0 30px;
+    border-left:3px solid #212121;
+}
+
+form.login div{
+    width:100%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    box-sizing: border-box;
+    padding:10px 40px;
+}
+
+form.login div label{
+    width:100%;
+}
+
+form.login div input{
+    width:100%;
+    max-width: 300px;
+}
+
+form.login .button{
+    display: inline-block;
+    float: right;
+    width: auto;
+}
+
+form.login div button{
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    border:none;
+    background: none;
+    float: right;
+}
+
+form.login div button h3{
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px rgba(150, 150, 150, 0.73);
+    letter-spacing: 7px;
+    margin:0px;
+    position: relative;
+    z-index: 4;
+    border-bottom: 3px solid #000000;
 }
